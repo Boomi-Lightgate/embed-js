@@ -1,2 +1,3 @@
-# dropin-ui
-A dropin ui for Boomi.com
+# React + Vite
+
+This is the Boomi.com Dropin UI Prototype. 

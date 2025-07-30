@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+@source inline('{dark:,hover:,focus:,}{bg,from,to,via,}-{gray,red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,pink,rose}-{50,{100..900..100},950}');
+@source inline("{sm:,md:,lg:,xl:,2xl:,3xl:,4xl:,5xl:,}max-w-{sm,md,lg,xl,2xl,3xl,4xl,5xl,6xl,7xl}");
+@source inline("{sm:,md:,lg:,xl:,2xl:,3xl:,4xl:,5xl:,}text-{sm,md,lg,xl,2xl,3xl,4xl,5xl,6xl,7xl}");
+@source inline("{bg-gradient-to-b}");
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@custom-variant boomi (&:where([data-theme=boomi], [data-theme=boomi] *));

@@ -1,0 +1,13 @@
+{
+  "entryPoints": ["src/index.ts"],  
+  "tsconfig": "tsconfig.json",
+  "plugin": ["typedoc-plugin-markdown"],
+  "out": "docs-md", // this is where the markdown docs are stored after creation
+  "readme": "none",
+  "hideBreadcrumbs": true,
+  "hidePageTitle": true,
+  "excludePrivate": true,
+  "excludeExternals": true,
+  "excludeInternal": true,
+  "sort": ["source-order"]
+}

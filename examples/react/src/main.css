@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Inter", "sans-serif";
+  --color-boomi-blue: #043C58;
+  --color-boomi-black: #1C2025;
+  --color-boomi-darkBlack: #000000;
+  --color-boomi-indigo: #4E4DDF;
+  --color-boomi-purple: #A03291;
+  --color-boomi-orange: #FA7868;
+  --color-boomi-chart-blue: #36A2EB;
+}
+
+/* custom themes for the boomi plugin */
+#boomi::part(boomi-theme) {
+  /* primary styles */
+  --plugin-primary: #A03291;
+  --plugin-bg: #fff;
+  --plugin-fg: #1e2939;
+
+  /** primary link styles */
+  --plugin-primary-link: #A03291;
+  --plugin-primary-link-hover: #007595;
+
+  /* Primary button */
+  --plugin-button-bg-primary: #A03291;
+  --plugin-button-fg-primary: #FFF;
+  --plugin-button-hover-bg-primary: #A03291;
+  --plugin-button-hover-fg-primary: #FFF;
+
+  /* secondary button */
+  --plugin-button-bg-secondary: #6b7280; 
+  --plugin-button-fg-secondary: #ffffff;
+  --plugin-button-hover-bg-secondary: #4b5563; 
+  --plugin-button-hover-fg-secondary: #ffffff;
+
+  /* input ring */
+  --plugin-ring-border: 2px;      
+  --plugin-ring: #00b9db;     
+  --plugin-input-border: #dcdcdc;   
+  --plugin-input-placeholder-fg: #9CA3AF;     
+
+  /* table */
+  --plugin-table-header-bg: #00b9db;
+  --plugin-table-header-fg: #FFF;
+  --plugin-table-bg: #F3F4F6;
+  --plugin-table-fg: #D1D5DB;
+
+  /* cards */
+  --plugin-card-icon: #99a1af;
+  --plugin-card-icon-h: 35px;
+  --plugin-card-icon-w: 35px;
+  --plugin-card-header-bg: #FFF;
+  --plugin-card-header-fg: #1e2939;
+  --plugin-card-body-bg: #FFF;
+  --plugin-card-body-fg: #616b79;
+  --plugin-card-footer-bg: #FFF;
+  --plugin-card-footer-fg: #616b79;
+  --plugin-card-footer-border: #f3f4f6;
+
+  /* warning, success, error */
+  --plugin-warning-background: #ffedd5;
+  --plugin-warning-foreground: #ea580c;
+  --plugin-error-background: #fee2e2;
+  --plugin-error-foreground: #dc2626;
+  --plugin-success-background: #fee2e2;
+  --plugin-success-foreground: #16a34a;
+  
+}

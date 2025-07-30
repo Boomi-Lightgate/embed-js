@@ -5,8 +5,8 @@
       "last_name": "Parr",
       "email": "bob.parr@incredibles.com",
       "password": "superStrong123",
-      "boomi_account_id": "",
-      "boomi_account_group": "SOME ACCCOUNT GROUP",
+      "boomi_account_id": "citizenintegratorcustomer-5LCJ8R",
+      "boomi_account_group": "Workday",
       "token": "token-bob-parr",
       "isAdmin": true
     }

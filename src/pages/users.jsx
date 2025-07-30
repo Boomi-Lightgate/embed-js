@@ -1,8 +1,6 @@
 import { useState} from "react";
-import UsageChart from "../components/UsageChart";
-import Subscription from "../components/Subscription";
 
-export default function OrganizationDashboardPage() {
+export default function UsersPage() {
   const user = JSON.parse(localStorage.getItem('user'));
   const [data, setData] = useState(null);
 

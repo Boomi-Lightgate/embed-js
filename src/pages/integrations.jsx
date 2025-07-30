@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { RenderComponent } from '../../../../dist/embed-js';
+import { RenderComponent } from '../../dist/embed-js';
 import { useLocation} from "react-router-dom";
 
 export default function IntegrationsPage() {

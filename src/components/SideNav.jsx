@@ -107,10 +107,10 @@ export default function SideNav() {
       {/* Static sidebar for desktop */}
       <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
         {/* Sidebar component, swap this element with another sidebar if you like */}
-        <div className="flex grow flex-col gap-y-5 overflow-y-auto px-6 bg-gradient-to-b from-gray-900 via-gray-900 to-purple-700">
-          <div className="flex h-16 shrink-0 items-center">
+        <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-sky-600">
+          <div className="flex h-16 shrink-0 items-cente justify-center mt-2 mb-1">
             <a href="/" className="pl-1.5 pt-0.5">
-              <span className=" text-gray-100 text-2xl">OEM+</span>
+                <img src="/workday-logo.png" alt="Workday Logo" className="h-20"/>
             </a>
           </div>
           <nav className="flex flex-1 flex-col pt-0 mt-0">
@@ -121,7 +121,7 @@ export default function SideNav() {
                     <>
                       {navigation.map((item) => (
                         <li key={item.to} className="group">
-                          <NavLink key={item.name} to={item.to} className={({isActive}) => (isActive ?'text-gray-200 bg-gray-600 bg-opacity-60 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold' : 'group-hover:bg-gray-600 group-hover:text-gray-200 group-hover:bg-opacity-30 text-gray-400 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold')} >
+                          <NavLink key={item.name} to={item.to} className={({isActive}) => (isActive ?'text-white bg-sky-700 bg-opacity-60 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold' : 'group-hover:bg-sky-700 group-hover:text-gray-200 group-hover:bg-opacity-30 text-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold')} >
                               <item.icon className="h-6 w-6 shrink-0" aria-hidden="true" />
                               {item.name}
                           </NavLink>

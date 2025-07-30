@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState, forwardRef, useImperativeHandle } from 'react';
-import { MapExtensionsMapping } from '../../index/models/MapExtensionsMapping';
-import { MapExtensionsNode } from '../../index/models/MapExtensionsNode';
+import { MapExtensionsMapping,  MapExtensionsNode } from '../../service';
 import Button from '../ui/Button';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { motion } from 'framer-motion';

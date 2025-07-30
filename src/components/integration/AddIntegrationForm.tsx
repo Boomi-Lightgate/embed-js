@@ -4,8 +4,7 @@ import React, {
   useState,
   useEffect,
 } from 'react';
-import { Environment } from '../../index/models/Environment';
-import { IntegrationPack } from '../../index/models/IntegrationPack';
+import { Environment, IntegrationPack } from '../../service';
 import IntegrationPackSelect from './IntegrationPackSelect';
 import EnvironmentSelect from './EnvironmentSelect';
 import Input from '../ui/Input';

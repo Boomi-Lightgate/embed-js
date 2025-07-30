@@ -4,7 +4,7 @@ import React, {
   useState,
   useEffect,
 } from 'react';
-import { EnvironmentExtensions } from '../../index/models/EnvironmentExtensions';
+import { EnvironmentExtensions } from '../../service';
 import Input from '../ui/Input';
 import labelMaker from '../../utils/labelMaker';
 import { usePlugin } from '../../context/pluginContext';

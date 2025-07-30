@@ -5,49 +5,9 @@
       "last_name": "Parr",
       "email": "bob.parr@incredibles.com",
       "password": "superStrong123",
-      "boomi_account_id": "citizenintegratorcustomer-5LCJ8R",
-      "boomi_account_group": "Custom Spaces Group",
+      "boomi_account_id": "",
+      "boomi_account_group": "SOME ACCCOUNT GROUP",
       "token": "token-bob-parr",
-      "isAdmin": true
-    },
-    {
-      "first_name": "Helen",
-      "last_name": "Parr",
-      "email": "helen.parr@incredibles.com",
-      "password": "superStrong123",
-      "boomi_account_id": "citizenintegratorcustomer-QOTOGJ",
-      "boomi_account_group": "Barry_Demos",
-      "token": "token-helen-parr",
-      "isAdmin": false
-    },
-    {
-      "first_name": "Violet",
-      "last_name": "Parr",
-      "email": "violet.parr@incredibles.com",
-      "password": "superStrong123",
-      "boomi_account_id": "citizenintegratorcustomer-5LCJ8R",
-      "boomi_account_group": "Barry_Demos",
-      "token": null,
-      "isAdmin": false
-    },
-    {
-      "first_name": "Dash",
-      "last_name": "Parr",
-      "email": "dash.parr@incredibles.com",
-      "password": "superStrong123",
-      "boomi_account_id": "citizenintegratorcustomer-5LCJ8R",
-      "boomi_account_group": "Barry_Demos",
-      "token": null,
-      "isAdmin": false
-    },
-    {
-      "first_name": "Edna",
-      "last_name": "Mode",
-      "email": "edna.mode@incredibles.com",
-      "password": "superStrong123",
-      "boomi_account_id": "citizenintegratorcustomer-5LCJ8R",
-      "boomi_account_group": "Barry_Demos",
-      "token": null,
       "isAdmin": true
     }
   ]

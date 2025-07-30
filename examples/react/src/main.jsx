@@ -6,7 +6,7 @@ import SignupPage from './pages/signup';
 import UsersPage from './pages/users';
 import IntegrationsPage from './pages/integrations';
 import DashboardPage from './pages/dashboard';
-import Users from './pages/Users';
+import Users from './pages/users';
 import Root from './Root';
 import ProtectedRoute from './protectedRoutes';
 import { AuthContextProvider } from './context/authContext';

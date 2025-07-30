@@ -79537,7 +79537,7 @@ const zdt = Ix({
   ).nullable()
 }), jdt = () => {
   const [e, t] = It(null), [r, i] = It(!1), [s, l] = It(null), { ai: v } = Ge();
-  if (!v || !v.apiKey)
+  if (!v || !v.apiKey || !v.model)
     throw new Error("OpenAI API key is not configured in the plugin context.");
   const m = new vr({ apiKey: v.apiKey, dangerouslyAllowBrowser: !0 });
   return {
@@ -79545,7 +79545,10 @@ const zdt = Ix({
     isLoading: r,
     error: s,
     fetchTransformation: async (y, u) => {
-      i(!0), l(null), t(null);
+      if (i(!0), l(null), t(null), !v.enabled) {
+        i(!1);
+        return;
+      }
       try {
         const p = (await m.responses.parse({
           model: v.model,

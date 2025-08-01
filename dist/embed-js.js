@@ -53487,7 +53487,7 @@ const Zot = {
                       dragElastic: 0,
                       dragSnapToOrigin: !1,
                       dragConstraints: { top: 15 },
-                      className: "absolute border rounded-md p-2 bg-gray-100 w-full hover:scale-101 hover:shadow-lg hover:shadow-indigo-200 shadow-md",
+                      className: "absolute border rounded-md p-2 bg-gray-100 w-full hover:shadow-lg hover:shadow-indigo-200 shadow-md",
                       style: { left: dt.x, y: Math.max(15, dt.y), cursor: "grab" },
                       onDrag: (At, Et) => {
                         gt((Qt) => ({

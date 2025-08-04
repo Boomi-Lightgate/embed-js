@@ -19,7 +19,7 @@ export const boomiConfig = {
     header:{
       show: true,
       class: 'w-full min-h-full min-w-full flow-root border-sky-600 border-2 bg-white',
-      titleClass: 'text-3xl leading-6 font-normal text-gray-700',
+      titleClass: 'text-3xl leading-6 font-normal text-sky-600',
       descriptionClass: 'text-gray-500 text-sm', 
     },
     viewTypeButton:{

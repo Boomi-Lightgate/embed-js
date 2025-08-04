@@ -8,8 +8,8 @@ export const boomiConfig = {
     },
     header:{
       show: true,
-      class: 'w-full min-h-full min-w-full flow-root border-gray-700 bg-gray-50',
-      titleClass: 'text-3xl leading-6 font-normal text-gray-700',
+      class: 'w-full min-h-full min-w-full flow-root border-gray-700 bg-red-400',
+      titleClass: 'text-3xl leading-6 font-normal text-green-400',
       descriptionClass: 'text-gray-500 text-sm', 
     },
     viewTypeButton:{

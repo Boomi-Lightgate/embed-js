@@ -107,7 +107,7 @@ export default function SideNav() {
       {/* Static sidebar for desktop */}
       <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
         {/* Sidebar component, swap this element with another sidebar if you like */}
-        <div className="flex grow flex-col gap-y-5 overflow-y-auto px-6 bg-gradient-to-b from-gray-900 via-gray-900 to-purple-700">
+        <div className="flex grow flex-col gap-y-5 overflow-y-auto px-6 bg-white">
           <div className="flex h-16 shrink-0 items-center">
             <a href="/" className="pl-1.5 pt-0.5">
               <span className=" text-gray-100 text-2xl">OEM+</span>

@@ -35558,19 +35558,21 @@ const _t = {
   return Te(() => {
     _t.debug("Initializing Boomi client using overrideRef.current =", k.current);
     const I = L(k.current);
-    u(I), p(!0), (async () => {
+    u(I), p(!0);
+    const B = /* @__PURE__ */ Object.assign({});
+    (async () => {
       try {
-        _t.debug("UI config path passed in: ", m);
-        const P = m ? await import(
+        let H;
+        if (m ? H = await import(
           /* @vite-ignore */
           m
-        ) : await import(
-          /* @vite-ignore */
-          "./boomi.config-DHug0U49.js"
-        );
-        _t.debug("UI config loaded"), w(P.boomiConfig);
-      } catch (P) {
-        _t.warn("Boomi configuration not found, proceeding without it."), _t.error(P);
+        ) : B["../../boomi.config.js"] && (H = await B["../../boomi.config.js"]()), H && typeof H == "object" && "boomiConfig" in H) {
+          const { boomiConfig: q } = H;
+          w(q);
+        } else
+          _t.warn("Boomi config file found but missing 'boomiConfig' export");
+      } catch (H) {
+        _t.warn("Boomi configuration not found, proceeding without it."), _t.error(H);
       }
     })();
   }, [t, r, i, l, s, v, m, g]), /* @__PURE__ */ Y.jsx(

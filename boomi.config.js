@@ -1,5 +1,3 @@
-import { de } from "@faker-js/faker";
-
 // boomi.config.js
 export const boomiConfig = {
   integrations: {

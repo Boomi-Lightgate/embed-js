@@ -43,7 +43,7 @@ export default function ProgressBar(props) {
       <div className="flex min-w-full pt-2">
         <a
           href={subscriptionUrl}
-          className="flex-1 text-center rounded-md bg-boomi-purple px-3.5 py-2.5 text-xs font-semibold text-gray-100 shadow-lg hover:bg-gray-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-boomi-purple"
+          className="flex-1 text-center rounded-md bg-blue-800 px-3.5 py-2.5 text-xs font-semibold text-white shadow-lg hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
         >
           Manage Subscription
         </a>

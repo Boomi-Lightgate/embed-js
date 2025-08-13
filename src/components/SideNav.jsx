@@ -1,13 +1,15 @@
-import { Fragment, useEffect, useState, useContext} from 'react'
+import { Fragment, useEffect, useMemo, useState, useContext } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { AiOutlineHome, 
-         AiOutlineClose, 
-         AiOutlineTeam,
-         AiOutlineDeploymentUnit} from "react-icons/ai";
-import { NavLink } from "react-router-dom";
-import { AuthContext } from '../context/authContext';
-import AjaxLoader from './AjaxLoader';
-import UserDropdown from "./UserDropdown";
+import {
+  AiOutlineHome,
+  AiOutlineClose,
+  AiOutlineTeam,
+  AiOutlineDeploymentUnit,
+} from 'react-icons/ai'
+import { NavLink } from 'react-router-dom'
+import { AuthContext } from '../context/authContext'
+import AjaxLoader from './AjaxLoader'
+import UserDropdown from './UserDropdown'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -16,23 +18,31 @@ function classNames(...classes) {
 export default function SideNav() {
   const { getUser } = useContext(AuthContext)
   const user = getUser()
-  console.log("user: ", user);
-  const [isLoading, setIsLoading] = useState(false);
-  const [sidebarOpen, setSidebarOpen] = useState(true);
-  const [navigation, setNavigation] = useState([]);
-  const menuList = [
-    { index: 0, object: 'organization', permission: 'read', name: 'Organization', to: "/dashboard", icon: AiOutlineHome },
-    ...(user?.isAdmin
-      ? [{ index: 1, object: 'user', permission: 'read', name: 'Users', to: '/users', icon: AiOutlineTeam }]
-      : []),
-    { index: 2, object: 'integration', permission: 'read', name: 'Integrations', to: '/integrations', icon: AiOutlineDeploymentUnit },
-  ]
+
+  const [isLoading, setIsLoading] = useState(false)
+  const [sidebarOpen, setSidebarOpen] = useState(true)
+  const [navigation, setNavigation] = useState([])
+
+  const menuList = useMemo(
+    () => [
+      { index: 0, object: 'organization', permission: 'read', name: 'Organization', to: '/dashboard', icon: AiOutlineHome },
+      { index: 2, object: 'integration', permission: 'read', name: 'Integrations', to: '/integrations', icon: AiOutlineDeploymentUnit },
+    ],
+    [user?.isAdmin]
+  )
+
   useEffect(() => {
-    setNavigation(menuList);
-  }, []);
+    setNavigation(menuList)
+  }, [menuList])
+
+  const sortedNav = useMemo(
+    () => [...navigation].sort((a, b) => (a.index > b.index ? 1 : -1)),
+    [navigation]
+  )
 
   return (
     <>
+      {/* Mobile sidebar */}
       <Transition.Root show={sidebarOpen} as={Fragment}>
         <Dialog as="div" className="relative z-50 lg:hidden" onClose={setSidebarOpen}>
           <Transition.Child
@@ -44,7 +54,8 @@ export default function SideNav() {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 bg-gray-900/80" />
+            {/* Use modal overlay token */}
+            <div className="fixed inset-0" style={{ background: 'var(--boomi-modal-overlay-bg)' }} />
           </Transition.Child>
 
           <div className="fixed inset-0 flex">
@@ -57,7 +68,11 @@ export default function SideNav() {
               leaveFrom="translate-x-0"
               leaveTo="-translate-x-full"
             >
-              <Dialog.Panel className="relative mr-16 flex w-full max-w-xs flex-1">
+              <Dialog.Panel
+                className={classNames(
+                  'relative mr-16 flex w-full max-w-xs flex-1',
+                )}
+              >
                 <Transition.Child
                   as={Fragment}
                   enter="ease-in-out duration-300"
@@ -68,31 +83,53 @@ export default function SideNav() {
                   leaveTo="opacity-0"
                 >
                   <div className="absolute left-full top-0 flex w-16 justify-center pt-5">
-                    <button type="button" className="-m-2.5 p-2.5" onClick={() => setSidebarOpen(false)}>
+                    <button
+                      type="button"
+                      className="-m-2.5 p-2.5"
+                      onClick={() => setSidebarOpen(false)}
+                    >
                       <span className="sr-only">Close sidebar</span>
-                      <AiOutlineClose className="h-6 w-6 text-white" aria-hidden="true" />
+                      <AiOutlineClose className="h-6 w-6" style={{ color: 'var(--boomi-menu-fg)' }} aria-hidden="true" />
                     </button>
                   </div>
                 </Transition.Child>
-                {/* Sidebar component, swap this element with another sidebar if you like */}
-                <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6 pb-2 ring-1 ring-white/10">
+
+                {/* Sidebar panel uses menu tokens */}
+                <div
+                  className="flex grow flex-col gap-y-5 overflow-y-auto px-6 pb-2"
+                >
                   <div className="flex h-16 shrink-0 items-center">
                     <a href="/" className="pl-1.5 pt-0.5">
-                      <span className=" text-gray-100 text-2xl">OEM+</span>
+                      <span className="text-2xl" style={{ color: 'var(--boomi-header-fg-color)' }}>OEM+</span>
                     </a>
                   </div>
+
                   <nav className="flex flex-1 flex-col">
                     <ul role="list" className="flex flex-1 flex-col gap-y-7">
                       <li>
                         <ul role="list" className="-mx-2 space-y-1">
-                            {navigation.sort((a, b) => (a.index > b.index) ? 1 : -1).map((item) => (
-                              <li key={item.to} className="group">
-                                <NavLink key={item.name} to={item.to} className={({isActive}) => (isActive ?'text-gray-200 bg-gray-600 bg-opacity-60 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold' : 'group-hover:bg-gray-600 group-hover:text-gray-200 group-hover:bg-opacity-30 text-gray-400 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold')} >
-                                    <item.icon className="h-6 w-6 shrink-0" aria-hidden="true" />
-                                    {item.name}
-                                </NavLink>
-                              </li>
-                            ))}
+                          {sortedNav.map((item) => (
+                            <li key={item.to} className="group">
+                              <NavLink
+                                key={item.name}
+                                to={item.to}
+                                className={({ isActive }) =>
+                                  classNames(
+                                    'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold',
+                                    // default state
+                                    'transition-colors',
+                                    // active vs hover via tokens
+                                    isActive
+                                      ? 'bg-[var(--boomi-menu-item-bg-hover)] text-[var(--boomi-menu-item-fg-hover)]'
+                                      : 'text-[var(--boomi-menu-item-fg)] hover:bg-[var(--boomi-menu-item-bg-hover)] hover:text-[var(--boomi-menu-item-fg-hover)]'
+                                  )
+                                }
+                              >
+                                <item.icon className="h-6 w-6 shrink-0" aria-hidden="true" />
+                                {item.name}
+                              </NavLink>
+                            </li>
+                          ))}
                         </ul>
                       </li>
                     </ul>
@@ -104,45 +141,72 @@ export default function SideNav() {
         </Dialog>
       </Transition.Root>
 
-      {/* Static sidebar for desktop */}
-      <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
-        {/* Sidebar component, swap this element with another sidebar if you like */}
-        <div className="flex grow flex-col gap-y-5 overflow-y-auto px-6 bg-gradient-to-b from-gray-900 via-gray-900 to-purple-700">
+      {/* Desktop sidebar */}
+      <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col bg-gray-200 border border-gray-400">
+        <div
+          className="flex grow flex-col gap-y-5 overflow-y-auto px-6"
+          style={{
+            // Use menu tokens rather than a fixed gradient
+            background: 'var(--boomi-menu-bg)',
+            color: 'var(--boomi-menu-fg)',
+            borderRight: '1px solid var(--boomi-menu-border)',
+          }}
+        >
           <div className="flex h-16 shrink-0 items-center">
-            <a href="/" className="pl-1.5 pt-0.5">
-              <span className=" text-gray-100 text-2xl">OEM+</span>
-            </a>
+          <img
+              src="RA-PLEX-lockup-logo-color.svg"
+              alt="Rockwell Automation"
+            />
           </div>
+
           <nav className="flex flex-1 flex-col pt-0 mt-0">
             <ul role="list" className="flex flex-1 flex-col gap-y-7">
               <li>
                 <ul role="list" className="-mx-2 space-y-1">
-                  {!isLoading && navigation.length > 0 && (
+                  {!isLoading && sortedNav.length > 0 && (
                     <>
-                      {navigation.map((item) => (
+                      {sortedNav.map((item) => (
                         <li key={item.to} className="group">
-                          <NavLink key={item.name} to={item.to} className={({isActive}) => (isActive ?'text-gray-200 bg-gray-600 bg-opacity-60 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold' : 'group-hover:bg-gray-600 group-hover:text-gray-200 group-hover:bg-opacity-30 text-gray-400 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold')} >
-                              <item.icon className="h-6 w-6 shrink-0" aria-hidden="true" />
-                              {item.name}
+                          <NavLink
+                            key={item.name}
+                            to={item.to}
+                            className={({ isActive }) =>
+                              classNames(
+                                'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold transition-colors',
+                                isActive
+                                  ? 'bg-blue-800 text-white'
+                                  : 'text-gray-800 hover:bg-blue-800 hover:text-white'
+                              )
+                            }
+                          >
+                            <item.icon className="h-6 w-6 shrink-0" aria-hidden="true" />
+                            {item.name}
                           </NavLink>
                         </li>
                       ))}
                     </>
                   )}
+
                   {isLoading && (
                     <div className="flex justify-center items-center">
-                      <AjaxLoader color="bg-boomi-purple" opac_one="opacity-50" opac_two="opacity-75" opac_three="" />
+                      <AjaxLoader
+                        color="bg-blue-800"
+                        opac_one="opacity-20"
+                        opac_two="opacity-50"
+                        opac_three="opacity-80"
+                      />
                     </div>
                   )}
                 </ul>
               </li>
+
               <li className="-mx-6 mt-auto pr-2">
-                <UserDropdown/>
+                <UserDropdown />
               </li>
             </ul>
           </nav>
         </div>
       </div>
     </>
-  );
+  )
 }

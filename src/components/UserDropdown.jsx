@@ -16,18 +16,28 @@ export default function UserDropdown() {
   return (
     <Menu as="div" className="relative inline-block text-left min-w-full pl-3">
       <div className="min-w-full">
-        <Menu.Button className="inline-flex min-w-full rounded-md bg-transparent py-2 text-sm font-semibold text-gray-200 hover:bg-gray-900 hover:bg-opacity-30">
-            <div className="flex min-w-full pt-2 pb-2">
-              <div className="flex-0 pl-2">
-                <AiOutlineUser className="h-5 w-5 text-gray-200" aria-hidden="true" />
-              </div>
-              <div className="flex-1 text-left pl-6">
-                {uName}
-              </div>
-              <div className="flex-0">
-                <AiOutlineMore className="h-5 w-5 text-gray-200" aria-hidden="true" />
-              </div>
+        <Menu.Button
+          className="group inline-flex min-w-full items-center rounded-md 
+                    bg-gray-300 py-3 text-sm font-semibold text-gray-700 
+                    hover:bg-blue-800 hover:text-white transition-colors"
+        >
+          <div className="flex min-w-full items-center">
+            <div className="flex-0 pl-2">
+              <AiOutlineUser
+                className="h-5 w-5 text-gray-700 group-hover:text-white transition-colors"
+                aria-hidden="true"
+              />
             </div>
+            <div className="flex-1 text-left pl-6 group-hover:text-white transition-colors">
+              {uName}
+            </div>
+            <div className="flex-0 pr-2">
+              <AiOutlineMore
+                className="h-5 w-5 text-gray-700 group-hover:text-white transition-colors"
+                aria-hidden="true"
+              />
+            </div>
+          </div>
         </Menu.Button>
       </div>
 

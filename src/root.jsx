@@ -39,7 +39,7 @@ export default function Root() {
   return (
     <div>
       <SideNav />
-      <div className="lg:pl-72 bg-gray-200">
+      <div className="lg:pl-72 bg-white">
         <Outlet key={location.pathname} />
       </div>
     </div>

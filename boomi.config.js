@@ -2,7 +2,7 @@
 export const boomiConfig = {
     theme: {
       allowThemes: true,
-      defaultTheme: 'rockwell'
+      defaultTheme: 'plex'
     },
     ai: {
       enabled: true,

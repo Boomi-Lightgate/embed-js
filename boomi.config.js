@@ -44,8 +44,8 @@ export const boomiConfig = {
         '--boomi-btn-primary-fg': '#FFFFFF',
         '--boomi-btn-primary-border': 'transparent',
         '--boomi-btn-primary-shadow': '0 1px 2px rgba(17,24,39,0.08)',
-        '--boomi-btn-primary-bg-hover': '#008BC6',
-        '--boomi-btn-primary-bg-active': '#007FB5',
+        '--boomi-btn-primary-bg-hover': '#000',
+        '--boomi-btn-primary-bg-active': '#000',
   
         '--boomi-btn-secondary-bg': '#F3F4F6',
         '--boomi-btn-secondary-fg': '#111827',

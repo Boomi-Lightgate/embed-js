@@ -19,7 +19,7 @@ export const boomiConfig = {
         '--default-font-family': 'var(--boomi-font)',
   
         /* Brand tokens (internal helpers) */
-        '--plex-blue': '#0096D5',
+        '--plex-blue': '#193bb8',
         '--plex-navy': '#2E2F3B',
         '--plex-gray': '#57626E',
         '--plex-light-gray': '#E3E8E8',
@@ -35,7 +35,7 @@ export const boomiConfig = {
         /* Header */
         '--boomi-header-bg-color': '#FFFFFF',
         '--boomi-header-fg-color': '#111827',
-        '--boomi-header-fg-hover': '#0096D5',
+        '--boomi-header-fg-hover': '#193bb8',
         '--boomi-header-border-color': '#E5E7EB',
         '--boomi-header-shadow': '0 1px 2px rgba(17,24,39,0.06)',
   
@@ -224,7 +224,7 @@ export const boomiConfig = {
         '--boomi-map-func-bg': '#F9FAFB',
         '--boomi-map-func-fg': '#111827',
         '--boomi-map-func-title-fg': 'var(--plex-navy)',
-        '--boomi-map-pin-source-bg': '#0096D5',
+        '--boomi-map-pin-source-bg': '#193bb8',
         '--boomi-map-pin-target-bg': '#10B981',
         '--boomi-map-pin-input-bg': '#F59E0B',
         '--boomi-map-pin-output-bg': '#6366F1',

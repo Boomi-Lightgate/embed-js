@@ -2,7 +2,7 @@
 export const boomiConfig = {
   theme: {
     allowThemes: true,
-    defaultTheme: 'dark'
+    defaultTheme: 'cartoon'
   },
   ai: {
     enabled: true,

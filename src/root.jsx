@@ -31,7 +31,12 @@ export default function Root() {
         token: import.meta.env.VITE_API_TOKEN,
         authUser: boomiAccountId,
         accountGroup: boomiAccountGroup,
-        configFile: '/boomi.config.js'
+        configFile: '/boomi.config.js',
+        ai: {
+          enabled: true,
+          model: 'gpt-4o-2024-08-06',
+          apiKey: import.meta.env.VITE_OPENAI_API_KEY,
+        },
       });
     }
   }, [user]);

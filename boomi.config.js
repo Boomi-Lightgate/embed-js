@@ -4,11 +4,6 @@ export const boomiConfig = {
     allowThemes: true,
     defaultTheme: 'dark'
   },
-  ai: {
-    enabled: true,
-    model: 'gpt-4o-2024-08-06',
-    apiKey: import.meta.env.VITE_OPENAI_API_KEY,
-  },
 
   // Per-theme overrides
   cssVarsByTheme: {

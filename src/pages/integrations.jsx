@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { RenderComponent } from '../../dist/embedkit';
+import { RenderComponent } from '../../dist/embedKit';
 import { useLocation} from "react-router-dom";
 
 export default function IntegrationsPage() {

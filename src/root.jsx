@@ -3,7 +3,7 @@ import { Outlet, useLocation} from "react-router-dom";
 import { useAuthContext } from './hooks/useAuthContext';
 import SideNav from './components/SideNav';
 import './main.css';
-import BoomiPlugin from '../dist/embedkit';
+import BoomiPlugin from '../dist/embedKit';
 
 export default function Root() {
   const { user } = useAuthContext();

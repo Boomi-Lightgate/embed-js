@@ -82973,11 +82973,10 @@ const yde = (t = {}) => {
       "div",
       {
         className: `
-            w-full min-h-full h-100
+            w-full pt-4
             flex items-center justify-center
             [background-color:var(--boomi-root-bg-color)]
             [color:var(--boomi-root-fg-color)]
-            p-6
           `,
         children: /* @__PURE__ */ W.jsx("div", { className: "max-w-xl w-full [background-color:var(--boomi-page-bg-color)]", children: /* @__PURE__ */ W.jsx(ku, { message: "Loading..." }) })
       }

@@ -18,7 +18,7 @@ export default function Header(props) {
               <div className="flex items-center">
                 <div className="flex lg:flex-1">
                   <a href="/" className="pl-1.5 pt-0.5">
-                    <span className=" text-gray-100 text-xl">OEM+</span>
+                    <span className=" text-gray-100 text-xl">XSELL</span>
                   </a>
                 </div>
               </div>

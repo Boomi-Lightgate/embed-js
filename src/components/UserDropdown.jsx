@@ -13,21 +13,16 @@ export default function UserDropdown() {
   if (lgData){
     uName = lgData.first_name + " " + lgData.last_name;
   }
+
   return (
-    <Menu as="div" className="relative inline-block text-left min-w-full pl-3">
-      <div className="min-w-full">
-        <Menu.Button className="inline-flex min-w-full rounded-md bg-transparent py-2 text-sm font-semibold text-gray-200 hover:bg-gray-900 hover:bg-opacity-30">
-            <div className="flex min-w-full pt-2 pb-2">
-              <div className="flex-0 pl-2">
-                <AiOutlineUser className="h-5 w-5 text-gray-200" aria-hidden="true" />
-              </div>
-              <div className="flex-1 text-left pl-6">
-                {uName}
-              </div>
-              <div className="flex-0">
-                <AiOutlineMore className="h-5 w-5 text-gray-200" aria-hidden="true" />
-              </div>
-            </div>
+    <Menu as="div" className="relative inline-block text-left w-full">
+      <div className="w-full">
+        <Menu.Button className="inline-flex w-full items-center rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100">
+          <div className="flex flex-1 items-center">
+            <AiOutlineUser className="h-5 w-5 text-slate-500" aria-hidden="true" />
+            <span className="ml-3 flex-1 text-left">{uName}</span>
+            <AiOutlineMore className="h-5 w-5 text-slate-500" aria-hidden="true" />
+          </div>
         </Menu.Button>
       </div>
 
@@ -39,11 +34,20 @@ export default function UserDropdown() {
         leave="transition ease-in duration-75"
         leaveFrom="transform opacity-100 scale-100 translate-y-0"
         leaveTo="transform opacity-0 scale-95 translate-y-2"
-        >
-        <Menu.Items className="absolute left-2.5 z-10 mt-[-6rem] w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-gray-50 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+      >
+        <Menu.Items className="absolute right-0 bottom-12 z-10 mt-2 w-48 origin-bottom-right divide-y divide-slate-100 rounded-md bg-white shadow-lg ring-1 ring-slate-200 focus:outline-none">
           <div className="py-1">
             <Menu.Item>
-              <LogoutButton title='Logout' />
+              {({ active }) => (
+                <div
+                  className={classNames(
+                    active ? "bg-slate-100 text-brand" : "text-slate-700",
+                    "block px-4 py-2 text-sm cursor-pointer"
+                  )}
+                >
+                  <LogoutButton title="Logout" />
+                </div>
+              )}
             </Menu.Item>
           </div>
         </Menu.Items>

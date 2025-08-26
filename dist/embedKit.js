@@ -82979,7 +82979,7 @@ const yde = (t = {}) => {
             [color:var(--boomi-root-fg-color)]
             p-6
           `,
-        children: /* @__PURE__ */ W.jsx("div", { className: "max-w-xl w-full rounded-2xl shadow-lg p-6 [background-color:var(--boomi-page-bg-color)]", children: /* @__PURE__ */ W.jsx(ku, { message: "Loading..." }) })
+        children: /* @__PURE__ */ W.jsx("div", { className: "max-w-xl w-full [background-color:var(--boomi-page-bg-color)]", children: /* @__PURE__ */ W.jsx(ku, { message: "Loading..." }) })
       }
     ) : L ? /* @__PURE__ */ W.jsx(
       "div",

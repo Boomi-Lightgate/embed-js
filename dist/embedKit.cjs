@@ -2475,7 +2475,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
             [background-color:var(--boomi-root-bg-color)]
             [color:var(--boomi-root-fg-color)]
             p-6
-          `,children:W.jsx("div",{className:"max-w-xl w-full rounded-2xl shadow-lg p-6 [background-color:var(--boomi-page-bg-color)]",children:W.jsx(_u,{message:"Loading..."})})}):N?W.jsx("div",{className:`
+          `,children:W.jsx("div",{className:"max-w-xl w-full [background-color:var(--boomi-page-bg-color)]",children:W.jsx(_u,{message:"Loading..."})})}):N?W.jsx("div",{className:`
             w-full min-h-full h-100
             flex items-center justify-center
             [background-color:var(--boomi-root-bg-color)]

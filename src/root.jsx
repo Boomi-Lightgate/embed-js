@@ -42,7 +42,7 @@ export default function Root() {
   }, [user]);
   
   return (
-    <div>
+    <div className="oem-home h-full">
       <SideNav />
       <div className="lg:pl-72 bg-gray-200">
         <Outlet key={location.pathname} />

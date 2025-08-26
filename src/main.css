@@ -58,6 +58,10 @@ body {
 }
 
 /* ===== Primary Next button (small pill with arrow) ===== */
+.xsell-home {
+  background: #fff !important;
+}
+
 .xshell-next {
   display: inline-flex;
   align-items: center;

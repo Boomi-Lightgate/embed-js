@@ -14,7 +14,7 @@ export default function OrganizationDashboardPage() {
     return classes.filter(Boolean).join(' ')
   }
   return (
-    <div className="min-w-full bg-gray-50">
+    <div className="min-w-full">
       <div className="pt-6 w-full sm:flex sm:items-center text-left">
         <div className="sm:flex-auto pl-8">
           <div className="flex">
@@ -44,7 +44,7 @@ export default function OrganizationDashboardPage() {
           </div>
         </div>
       </div>
-      <div className="w-full min-h-full min-w-full flow-root border-t-1 border-gray-900 bg-gray-200 overflow-x-hidden">
+      <div className="w-full min-h-full min-w-full flow-root border-t-1 border-gray-900 overflow-x-hidden xsell-home">
         <>
           <div className="flex min-w-full min-h-full">
             <div className="flex-1 grid grid-cols-4 gap-4 p-6">
